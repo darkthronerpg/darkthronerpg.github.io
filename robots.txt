@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://darkthronerpg.github.io/sitemap.xml

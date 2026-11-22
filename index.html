@@ -2,33 +2,420 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="google-site-verification" content="Z9nZcgRB1elr4uYX5c1ZTHRpSI9Adt1aZKN1oM4Fzms" />
-<title>Dark Throne: Isekai RPG — Downpour Studio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dark Throne: Isekai RPG — dark fantasy RPG for Android | Downpour Studio</title>
+<meta name="description" content="Dark Throne: Isekai RPG is a free dark fantasy mobile RPG. Swipe combat, 3 classes and 6 paths, dungeons, artifacts, 400+ items and a story of a sealed demon king. Android, iOS soon.">
+<meta name="keywords" content="Dark Throne Isekai RPG, isekai RPG, dark fantasy RPG, mobile RPG, Android RPG, swipe combat, offline RPG, Downpour Studio, исекай RPG, тёмное фэнтези RPG, мобильная RPG, ісекай RPG">
+<link rel="canonical" href="https://darkthronerpg.github.io/">
+<meta name="theme-color" content="#0b0e15">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Dark Throne: Isekai RPG">
+<meta property="og:title" content="Dark Throne: Isekai RPG — dark fantasy RPG for Android">
+<meta property="og:description" content="Swipe combat, dungeons, artifacts and a world on the edge of a demon king's return. Free on Google Play.">
+<meta property="og:image" content="https://darkthronerpg.github.io/assets/og.jpg">
+<meta property="og:url" content="https://darkthronerpg.github.io/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://darkthronerpg.github.io/assets/og.jpg">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230b0e15'/%3E%3Cpath d='M16 3 29 16 16 29 3 16Z' fill='none' stroke='%23cc9e42' stroke-width='2.5'/%3E%3Cpath d='M16 10 22 16 16 22 10 16Z' fill='%23ffd24d'/%3E%3C/svg%3E">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": ["VideoGame", "MobileApplication"],
+  "name": "Dark Throne: Isekai RPG",
+  "alternateName": ["Dark Throne Isekai", "Dark Throne RPG"],
+  "description": "A dark fantasy isekai RPG for mobile: swipe combat, classes and paths, dungeons, artifacts and a story about a sealed demon king.",
+  "url": "https://darkthronerpg.github.io/",
+  "image": "https://darkthronerpg.github.io/assets/og.jpg",
+  "genre": ["RPG", "Dark fantasy", "Isekai"],
+  "gamePlatform": ["Android"],
+  "operatingSystem": "Android",
+  "applicationCategory": "GameApplication",
+  "inLanguage": ["en", "ru", "uk"],
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+  "publisher": {"@type": "Organization", "name": "Downpour Studio", "email": "darkthronerpg@gmail.com"},
+  "sameAs": [
+    "https://www.youtube.com/@DarkThroneRPG",
+    "https://www.tiktok.com/@darkthronerpg",
+    "https://www.tiktok.com/@dark.throne42",
+    "https://www.instagram.com/darkthronerpg",
+    "https://t.me/DarkThroneRPG",
+    "https://discord.gg/MQnkBZV8D4"
+  ]
+}
+</script>
+
 <style>
-:root{--bg:#090d13;--card:#0f141c;--gold:#ffd14d;--gold2:#cc9e42;--text:#ebdcb8;--dim:#a39c90}
-*{box-sizing:border-box}body{margin:0;background:radial-gradient(1200px 600px at 50% -10%,#2a1d0c 0%,var(--bg) 60%);color:var(--text);font:17px/1.65 Georgia,"Times New Roman",serif}
-main{max-width:820px;margin:0 auto;padding:48px 22px 80px}
-.card{background:var(--card);border:1px solid rgba(204,158,66,.55);box-shadow:0 0 0 6px rgba(204,158,66,.06);padding:34px 34px 40px}
-h1{color:var(--gold);font-size:34px;letter-spacing:.5px;margin:0 0 6px}h2{color:var(--gold2);font-size:21px;margin:34px 0 8px;border-bottom:1px solid rgba(204,158,66,.25);padding-bottom:6px}
-a{color:var(--gold)}strong{color:#fff3d6}ul{padding-left:22px}li{margin:4px 0}
-.btn{display:inline-block;margin:18px 12px 0 0;padding:14px 26px;background:#75501a;color:var(--gold);border:2px solid var(--gold);text-decoration:none;font-weight:bold;letter-spacing:1px}
-.dim{color:var(--dim)}footer{margin-top:28px;color:var(--dim);font-size:14px;text-align:center}
+@font-face{font-family:Cinzel;font-weight:400;font-display:swap;src:url(assets/fonts/cinzel-latin-400-normal.woff2) format("woff2")}
+@font-face{font-family:Cinzel;font-weight:700;font-display:swap;src:url(assets/fonts/cinzel-latin-700-normal.woff2) format("woff2")}
+@font-face{font-family:Philosopher;font-weight:400;font-display:swap;src:url(assets/fonts/philosopher-latin-400-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+2000-206F,U+20AC,U+2122}
+@font-face{font-family:Philosopher;font-weight:700;font-display:swap;src:url(assets/fonts/philosopher-latin-700-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+2000-206F,U+20AC,U+2122}
+@font-face{font-family:Philosopher;font-weight:400;font-display:swap;src:url(assets/fonts/philosopher-cyrillic-400-normal.woff2) format("woff2");unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:Philosopher;font-weight:700;font-display:swap;src:url(assets/fonts/philosopher-cyrillic-700-normal.woff2) format("woff2");unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+
+:root{
+  --night:#0b0e15; --night2:#121722; --card:#141a26; --wood:#1c140d;
+  --gold:#ffd24d; --frame:#cc9e42; --frame-dim:rgba(204,158,66,.45);
+  --beige:#ebdcb8; --dim:#b3a890; --bronze:#76501a;
+  --display:Cinzel, Philosopher, Georgia, serif;
+}
+html[lang=ru], html[lang=uk]{ --display:Philosopher, Georgia, serif; }
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--night);color:var(--beige);font:18px/1.6 Philosopher, Georgia, serif;-webkit-font-smoothing:antialiased}
+a{color:var(--gold)}
+img{max-width:100%;height:auto;display:block}
+.wrap{max-width:1120px;margin:0 auto;padding:0 22px}
+
+/* ─ шапка ─ */
+.top{position:sticky;top:0;z-index:20;background:rgba(11,14,21,.86);backdrop-filter:blur(8px);border-bottom:1px solid var(--frame-dim)}
+.top .wrap{display:flex;align-items:center;gap:18px;height:60px}
+.brand{font-family:var(--display);font-weight:700;color:var(--gold);letter-spacing:.12em;text-decoration:none;white-space:nowrap}
+.top nav{display:flex;gap:18px;margin-left:auto}
+.top nav a{color:var(--beige);text-decoration:none;font-size:15px;letter-spacing:.06em;text-transform:uppercase;opacity:.8}
+.top nav a:hover{opacity:1;color:var(--gold)}
+.lang{display:flex;border:1px solid var(--frame-dim)}
+.lang button{background:none;border:0;color:var(--dim);font:700 13px Philosopher,serif;padding:6px 9px;cursor:pointer;letter-spacing:.08em}
+.lang button.on{background:var(--bronze);color:#fff3d6}
+@media(max-width:760px){.top nav{display:none}.lang{margin-left:auto}}
+
+/* ─ герой ─ */
+.hero{position:relative;overflow:hidden;padding:70px 0 80px;
+  background:radial-gradient(ellipse at 70% 30%,rgba(204,158,66,.16),transparent 55%),radial-gradient(ellipse at 20% 80%,rgba(120,20,20,.22),transparent 60%),var(--night)}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center}
+.kicker{font-size:14px;letter-spacing:.32em;text-transform:uppercase;color:var(--frame)}
+h1{font-family:var(--display);font-weight:700;color:var(--gold);font-size:clamp(46px,7vw,86px);line-height:1;margin:14px 0 6px;letter-spacing:.06em;text-shadow:0 0 40px rgba(255,190,60,.25)}
+.sub{font-family:var(--display);font-size:clamp(18px,2.4vw,26px);letter-spacing:.3em;color:var(--beige);margin:0 0 22px}
+.lead{font-size:20px;max-width:560px;color:var(--beige)}
+.cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:28px}
+.btn{position:relative;display:inline-flex;align-items:center;gap:10px;padding:15px 26px;text-decoration:none;font:700 16px Philosopher,serif;letter-spacing:.12em;text-transform:uppercase;border:1.5px solid var(--frame);color:var(--beige);background:linear-gradient(#22190f,#140f09)}
+.btn.main{background:linear-gradient(#93652a,#5e3f12);color:#fff3d6;border-color:var(--gold);box-shadow:0 0 24px rgba(255,190,60,.25)}
+.btn:hover{filter:brightness(1.15)}
+.btn::before,.btn::after{content:"";position:absolute;top:50%;width:9px;height:9px;background:var(--gold);transform:translateY(-50%) rotate(45deg)}
+.btn::before{left:-5px}.btn::after{right:-5px}
+.note{margin-top:14px;font-size:15px;color:var(--dim)}
+.phone{justify-self:center;width:min(320px,80vw);padding:10px;border:2px solid var(--frame);background:#05070b;border-radius:34px;box-shadow:0 30px 80px rgba(0,0,0,.7),0 0 60px rgba(204,158,66,.18)}
+.phone img{border-radius:26px}
+@media(max-width:860px){.hero .wrap{grid-template-columns:1fr}.phone{order:-1;width:min(260px,70vw)}}
+
+/* ─ секции ─ */
+section{padding:80px 0;border-top:1px solid rgba(204,158,66,.18)}
+section.alt{background:linear-gradient(180deg,var(--night2),var(--night))}
+h2{font-family:var(--display);color:var(--gold);text-align:center;font-size:clamp(28px,4vw,42px);letter-spacing:.1em;margin:0 0 10px;text-transform:uppercase}
+.rule{display:flex;align-items:center;justify-content:center;gap:12px;margin:0 auto 40px}
+.rule::before,.rule::after{content:"";height:2px;width:120px;background:linear-gradient(90deg,transparent,var(--frame))}
+.rule::after{transform:scaleX(-1)}
+.rule i{width:12px;height:12px;background:var(--frame);transform:rotate(45deg)}
+.intro{text-align:center;max-width:720px;margin:-20px auto 40px;color:var(--dim)}
+
+.feat{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card{position:relative;background:linear-gradient(180deg,rgba(255,210,120,.05),transparent 40%),var(--card);border:1px solid var(--frame-dim);padding:26px 24px 24px}
+.card::before{content:"";position:absolute;inset:6px;border:1px solid rgba(204,158,66,.12);pointer-events:none}
+.card h3{font-family:var(--display);color:var(--gold);font-size:21px;margin:0 0 8px;letter-spacing:.06em}
+.card p{margin:0;color:var(--beige);font-size:17px}
+.card .ico{width:44px;height:44px;margin-bottom:12px;border:1.5px solid var(--frame);transform:rotate(45deg);display:grid;place-items:center;background:#0b0e15}
+.card .ico span{transform:rotate(-45deg);color:var(--gold);font-weight:700}
+@media(max-width:900px){.feat{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.feat{grid-template-columns:1fr}}
+
+.gallery{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 4px 18px}
+.gallery img{flex:0 0 auto;width:250px;scroll-snap-align:start;border:1px solid var(--frame-dim);cursor:zoom-in}
+.gallery::-webkit-scrollbar{height:8px}.gallery::-webkit-scrollbar-thumb{background:var(--bronze)}
+
+.classes{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.classes .card h3{font-size:24px}
+.paths{margin-top:14px;display:flex;gap:8px;flex-wrap:wrap}
+.paths b{font-weight:700;font-size:14px;letter-spacing:.06em;padding:4px 10px;border:1px solid var(--frame-dim);color:var(--gold)}
+@media(max-width:760px){.classes{grid-template-columns:1fr}}
+
+.world{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.world p{font-size:19px}
+.world blockquote{margin:24px 0 0;padding:18px 22px;border-left:3px solid var(--frame);background:rgba(204,158,66,.06);font-style:italic;color:var(--dim)}
+.world .shot{border:1px solid var(--frame-dim);max-width:360px;justify-self:center}
+@media(max-width:760px){.world{grid-template-columns:1fr}}
+
+.tester{text-align:center;background:radial-gradient(ellipse at 50% 0%,rgba(204,158,66,.18),transparent 60%),var(--night2)}
+.tester p{max-width:640px;margin:0 auto 26px}
+.tester .cta{justify-content:center}
+
+.social{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;max-width:880px;margin:0 auto}
+.social a{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:16px 18px;border:1px solid var(--frame-dim);background:var(--card);text-decoration:none;color:var(--beige);font-weight:700;letter-spacing:.05em}
+.social a:hover{border-color:var(--gold);color:var(--gold)}
+.social small{font-weight:400;color:var(--dim);font-size:13px;letter-spacing:.1em}
+@media(max-width:760px){.social{grid-template-columns:1fr 1fr}}
+@media(max-width:460px){.social{grid-template-columns:1fr}}
+
+.faq{max-width:780px;margin:0 auto}
+.faq details{border:1px solid var(--frame-dim);background:var(--card);margin-bottom:12px;padding:0 20px}
+.faq summary{cursor:pointer;padding:16px 0;font-weight:700;color:var(--gold);list-style:none}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::before{content:"";display:inline-block;width:9px;height:9px;background:var(--frame);transform:rotate(45deg);margin-right:12px}
+.faq details p{margin:0 0 16px;color:var(--beige)}
+
+footer{border-top:1px solid var(--frame-dim);padding:34px 0;color:var(--dim);font-size:15px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:12px 26px;align-items:center;justify-content:space-between}
+footer nav{display:flex;flex-wrap:wrap;gap:18px}
+footer a{color:var(--dim)}
+
+.lightbox{position:fixed;inset:0;background:rgba(0,0,0,.9);display:none;align-items:center;justify-content:center;z-index:50;cursor:zoom-out}
+.lightbox.on{display:flex}
+.lightbox img{max-height:92vh;max-width:92vw;border:1px solid var(--frame)}
 </style>
 </head>
 <body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#">DARK THRONE</a>
+    <nav>
+      <a href="#features" data-i="nav_features">Features</a>
+      <a href="#screens" data-i="nav_screens">Screenshots</a>
+      <a href="#world" data-i="nav_world">World</a>
+      <a href="#community" data-i="nav_community">Community</a>
+      <a href="#faq" data-i="nav_faq">FAQ</a>
+    </nav>
+    <div class="lang" role="group" aria-label="Language">
+      <button data-lang="en">EN</button><button data-lang="ru">RU</button><button data-lang="uk">UA</button>
+    </div>
+  </div>
+</header>
+
 <main>
-<div class="card">
-<h1>Dark Throne: Isekai RPG</h1>
-<p class="dim">A dark fantasy mobile RPG by Downpour Studio</p>
-<p>An isekai dark fantasy RPG: create your hero, fight through the Forest of Shadows and its dungeons, collect artifacts and uncover the secret of the Seal.</p>
-<a class="btn" href="https://play.google.com/store/apps/details?id=com.downpourstudio.darkthrone">Get it on Google Play</a>
-<h2>Support</h2>
-<p>Questions, bug reports or account requests: <a href="mailto:darkthronerpg@gmail.com">darkthronerpg@gmail.com</a>. Please include your Player ID (in the game: Profile).</p>
-<h2>Legal</h2>
-<ul><li><a href="privacy.html">Privacy Policy</a></li><li><a href="privacy.html#delete">Delete your account and data</a></li></ul>
-</div>
-<footer>© 2026 Downpour Studio · <a href="index.html">Home</a> · <a href="privacy.html">Privacy Policy</a> · <a href="mailto:darkthronerpg@gmail.com">darkthronerpg@gmail.com</a></footer>
+<section class="hero" style="border-top:0">
+  <div class="wrap">
+    <div>
+      <div class="kicker" data-i="kicker">Dark fantasy mobile RPG</div>
+      <h1>DARK THRONE</h1>
+      <p class="sub">ISEKAI RPG</p>
+      <p class="lead" data-i="lead">You were summoned to Erashal, a world where the seal on the Demon King Malgarot is cracking. Fight with swipes, read every attack, forge your gear and uncover what the people of Ashal are hiding.</p>
+      <div class="cta">
+        <a class="btn main" href="https://play.google.com/store/apps/details?id=com.downpourstudio.darkthrone" target="_blank" rel="noopener" data-i="cta_play">Get it on Google Play</a>
+        <a class="btn" id="testerBtn" href="#tester" data-i="cta_tester">Become a tester</a>
+      </div>
+      <p class="note" data-i="note">Free · Android · iOS coming soon · English, Русский, Українська</p>
+    </div>
+    <div class="phone"><img src="assets/shots/battle.jpg" alt="Dark Throne combat: a black wolf attacks, dodge and block buttons" width="576" height="1280"></div>
+  </div>
+</section>
+
+<section id="features">
+  <div class="wrap">
+    <h2 data-i="h_features">What awaits you</h2>
+    <div class="rule"><i></i></div>
+    <div class="feat">
+      <div class="card"><div class="ico"><span>I</span></div><h3 data-i="f1_t">Swipe combat</h3><p data-i="f1_d">Strike with a swipe. An orange bar means block, a red one means dodge. Perfect timing slows time and doubles your next hit.</p></div>
+      <div class="card"><div class="ico"><span>II</span></div><h3 data-i="f2_t">Classes and paths</h3><p data-i="f2_d">Warrior, Mage or Gatherer. At class level 15 choose one of two paths, and your hero's look changes with every step.</p></div>
+      <div class="card"><div class="ico"><span>III</span></div><h3 data-i="f3_t">400+ items</h3><p data-i="f3_d">Weapons and armor with levels, rarities from common to mythic, and sets whose bonuses change how you fight.</p></div>
+      <div class="card"><div class="ico"><span>IV</span></div><h3 data-i="f4_t">Torin's forge</h3><p data-i="f4_d">Upgrade gear up to +10, fuse three items into a rarer one and repair worn armor before the next fight.</p></div>
+      <div class="card"><div class="ico"><span>V</span></div><h3 data-i="f5_t">Dungeons and artifacts</h3><p data-i="f5_d">Daily dungeons for gold and XP, and a fog-covered artifact dungeon where every step is a choice.</p></div>
+      <div class="card"><div class="ico"><span>VI</span></div><h3 data-i="f6_t">A living city</h3><p data-i="f6_d">Story quests, guild contracts, secret quests and characters with their own pasts. Not everyone is who they seem.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="screens" class="alt">
+  <div class="wrap">
+    <h2 data-i="h_screens">Screenshots</h2>
+    <div class="rule"><i></i></div>
+    <div class="gallery" id="gallery"></div>
+  </div>
+</section>
+
+<section id="classes">
+  <div class="wrap">
+    <h2 data-i="h_classes">Choose your path</h2>
+    <div class="rule"><i></i></div>
+    <div class="classes">
+      <div class="card"><h3 data-i="c1_t">Warrior</h3><p data-i="c1_d">Steel, shield and battle cry. Holds the line and hits hard.</p><div class="paths"><b data-i="p_berserk">Berserker</b><b data-i="p_guard">Guardian</b></div></div>
+      <div class="card"><h3 data-i="c2_t">Mage</h3><p data-i="c2_d">Fire, ice and lightning. Fragile, but deadly from afar.</p><div class="paths"><b data-i="p_fire">Fire</b><b data-i="p_ice">Ice</b></div></div>
+      <div class="card"><h3 data-i="c3_t">Gatherer</h3><p data-i="c3_d">Agility, weak spots and loot. Finds gold where others find nothing.</p><div class="paths"><b data-i="p_hunter">Hunter</b><b data-i="p_trader">Trader</b></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="world" class="alt">
+  <div class="wrap world">
+    <div>
+      <h2 style="text-align:left" data-i="h_world">The world of Erashal</h2>
+      <p data-i="w1">A thousand years ago five heroes sealed Malgarot, the Demon King. None of them came home. Now the seal is cracking, the forests are full of shadows, and this world no longer gives birth to heroes of its own.</p>
+      <p data-i="w2">So a god searched beyond it, and found you. Ashal, the last free city, is waiting.</p>
+      <blockquote data-i="w3">"Thousands of souls. Almost all of them went out the moment I showed them what lay ahead. Yours is still burning."</blockquote>
+    </div>
+    <img class="shot" src="assets/shots/city.jpg" alt="The city of Ashal: tavern, church, market and gates" loading="lazy" width="576" height="1280">
+  </div>
+</section>
+
+<section id="tester" class="tester">
+  <div class="wrap">
+    <h2 data-i="h_tester">Join the closed test</h2>
+    <div class="rule"><i></i></div>
+    <p data-i="t_d">The game is in closed testing on Google Play. Leave your Google Play email, we add you to the testers, and you play before release and help shape the game.</p>
+    <div class="cta">
+      <a class="btn main" id="testerForm" href="https://docs.google.com/forms/d/e/1FAIpQLSf8FGzAT4jbbQYOfLh4tjMWU34qvw7G5F3yjhBBgVP-SOncPg/viewform" target="_blank" rel="noopener" data-i="cta_tester">Become a tester</a>
+      <a class="btn" href="https://discord.gg/MQnkBZV8D4" target="_blank" rel="noopener">Discord</a>
+    </div>
+  </div>
+</section>
+
+<section id="community">
+  <div class="wrap">
+    <h2 data-i="h_community">Community</h2>
+    <div class="rule"><i></i></div>
+    <div class="social">
+      <a href="https://discord.gg/MQnkBZV8D4" target="_blank" rel="noopener">Discord <small>EN · RU</small></a>
+      <a href="https://www.youtube.com/@DarkThroneRPG" target="_blank" rel="noopener">YouTube <small>EN</small></a>
+      <a href="https://www.instagram.com/darkthronerpg" target="_blank" rel="noopener">Instagram <small>EN</small></a>
+      <a href="https://www.tiktok.com/@dark.throne42" target="_blank" rel="noopener">TikTok <small>EN</small></a>
+      <a href="https://www.tiktok.com/@darkthronerpg" target="_blank" rel="noopener">TikTok <small>RU</small></a>
+      <a href="https://t.me/DarkThroneRPG" target="_blank" rel="noopener">Telegram <small>RU</small></a>
+    </div>
+  </div>
+</section>
+
+<section id="faq" class="alt">
+  <div class="wrap faq">
+    <h2 data-i="h_faq">FAQ</h2>
+    <div class="rule"><i></i></div>
+    <details><summary data-i="q1">Is the game free?</summary><p data-i="a1">Yes. Dark Throne is free to download and play.</p></details>
+    <details><summary data-i="q2">Which platforms?</summary><p data-i="a2">Android now (closed test on Google Play). iOS is planned next.</p></details>
+    <details><summary data-i="q3">Do I need internet?</summary><p data-i="a3">You can play offline. Sign in with Google Play Games to keep your progress in the cloud and restore it on a new phone.</p></details>
+    <details><summary data-i="q4">Which languages?</summary><p data-i="a4">English, Russian and Ukrainian. You can switch the language in the settings.</p></details>
+    <details><summary data-i="q5">Who makes it?</summary><p data-i="a5">Downpour Studio, a solo indie developer from Kyiv. Follow the devlogs on YouTube and TikTok.</p></details>
+    <details><summary data-i="q6">I found a bug or lost progress</summary><p data-i="a6">Write to darkthronerpg@gmail.com and include your Player ID (Hero profile → Copy).</p></details>
+  </div>
+</section>
 </main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Downpour Studio · Dark Throne: Isekai RPG</span>
+    <nav>
+      <a href="privacy.html" data-i="ft_privacy">Privacy Policy</a>
+      <a href="privacy.html#delete" data-i="ft_delete">Delete account</a>
+      <a href="mailto:darkthronerpg@gmail.com" data-i="ft_support">Support</a>
+    </nav>
+  </div>
+</footer>
+
+<div class="lightbox" id="lightbox"><img alt=""></div>
+
+<script>
+// ── НАСТРОЙКИ ────────────────────────────────────────────────
+// Ссылка на Google Форму «стать тестером» — вставь сюда свою:
+var TESTER_URL = "https://docs.google.com/forms/d/e/1FAIpQLSf8FGzAT4jbbQYOfLh4tjMWU34qvw7G5F3yjhBBgVP-SOncPg/viewform";
+var SHOTS = ["01_battle", "02_hero", "03_city", "04_bag", "05_forge", "06_dungeons"];
+
+var T = {
+ru: {
+  nav_features:"Особенности", nav_screens:"Скриншоты", nav_world:"Мир", nav_community:"Сообщество", nav_faq:"Вопросы",
+  kicker:"Мобильная RPG в тёмном фэнтези",
+  lead:"Тебя призвали в Эрасхал — мир, где трескается печать Короля Демонов Малгарота. Сражайся свайпами, читай каждую атаку, куй снаряжение и узнай, что скрывают жители Асхала.",
+  cta_play:"Скачать в Google Play", cta_tester:"Стать тестером",
+  note:"Бесплатно · Android · скоро iOS · English, Русский, Українська",
+  h_features:"Что тебя ждёт",
+  f1_t:"Бой свайпами", f1_d:"Бей свайпом. Оранжевая полоса — блок, красная — уворот. Идеальный тайминг замедляет время и удваивает следующий удар.",
+  f2_t:"Классы и пути", f2_d:"Воин, Маг или Добытчик. На 15 уровне класса — выбор одного из двух путей, и облик героя меняется с каждым шагом.",
+  f3_t:"400+ вещей", f3_d:"Оружие и броня с уровнями, редкостями от обычной до мифической и сетами, бонусы которых меняют стиль боя.",
+  f4_t:"Кузница Торина", f4_d:"Заточка до +10, слияние трёх вещей в более редкую и ремонт износа перед новым боем.",
+  f5_t:"Данжи и артефакты", f5_d:"Ежедневные данжи за золото и опыт и данж артефактов в тумане, где каждый шаг — выбор.",
+  f6_t:"Живой город", f6_d:"Сюжетные задания, заказы гильдии, секретные квесты и персонажи со своим прошлым. Не все те, кем кажутся.",
+  h_screens:"Скриншоты", h_classes:"Выбери свой путь",
+  c1_t:"Воин", c1_d:"Сталь, щит и боевой клич. Держит удар и бьёт тяжело.",
+  c2_t:"Маг", c2_d:"Огонь, лёд и молния. Хрупкий, но смертоносный на расстоянии.",
+  c3_t:"Добытчик", c3_d:"Ловкость, слабые места и добыча. Находит золото там, где другие не находят ничего.",
+  p_berserk:"Берсерк", p_guard:"Страж", p_fire:"Огонь", p_ice:"Лёд", p_hunter:"Охотник", p_trader:"Торговец",
+  h_world:"Мир Эрасхала",
+  w1:"Тысячу лет назад пятеро героев запечатали Малгарота, Короля Демонов. Домой не вернулся никто. Теперь печать трещит, леса полны теней, а своих героев этот мир больше не рождает.",
+  w2:"Поэтому бог искал за его пределами — и нашёл тебя. Асхал, последний свободный город, ждёт.",
+  w3:"«Тысячи душ. Почти все гасли, едва я показывал им, что ждёт впереди. Твоя — горит.»",
+  h_tester:"Стань тестером",
+  t_d:"Игра в закрытом тесте Google Play. Оставь почту Google Play — мы добавим тебя в тестеры, и ты сыграешь до релиза и поможешь сделать игру лучше.",
+  h_community:"Сообщество", h_faq:"Вопросы",
+  q1:"Игра бесплатная?", a1:"Да. Dark Throne можно скачать и играть бесплатно.",
+  q2:"На каких платформах?", a2:"Сейчас Android (закрытый тест в Google Play). Следом — iOS.",
+  q3:"Нужен ли интернет?", a3:"Играть можно офлайн. Войди через Google Play Игры — прогресс сохранится в облаке и вернётся на новом телефоне.",
+  q4:"Какие языки?", a4:"Русский, английский и украинский. Язык меняется в настройках.",
+  q5:"Кто делает игру?", a5:"Downpour Studio — соло-разработчик из Киева. Девлоги — на YouTube и в TikTok.",
+  q6:"Нашёл баг или пропал прогресс", a6:"Напиши на darkthronerpg@gmail.com и укажи свой ID игрока (Профиль героя → Копировать).",
+  ft_privacy:"Политика конфиденциальности", ft_delete:"Удалить аккаунт", ft_support:"Поддержка"
+},
+uk: {
+  nav_features:"Особливості", nav_screens:"Скріншоти", nav_world:"Світ", nav_community:"Спільнота", nav_faq:"Питання",
+  kicker:"Мобільна RPG у темному фентезі",
+  lead:"Тебе викликали в Ерасхал — світ, де тріскається печатка Короля Демонів Малгарота. Бийся свайпами, читай кожну атаку, куй спорядження й дізнайся, що приховують мешканці Асхала.",
+  cta_play:"Завантажити в Google Play", cta_tester:"Стати тестером",
+  note:"Безкоштовно · Android · незабаром iOS · English, Русский, Українська",
+  h_features:"Що на тебе чекає",
+  f1_t:"Бій свайпами", f1_d:"Бий свайпом. Помаранчева смуга — блок, червона — ухил. Ідеальний таймінг сповільнює час і подвоює наступний удар.",
+  f2_t:"Класи та шляхи", f2_d:"Воїн, Маг або Здобувач. На 15 рівні класу — вибір одного з двох шляхів, і образ героя змінюється з кожним кроком.",
+  f3_t:"400+ речей", f3_d:"Зброя та броня з рівнями, рідкісністю від звичайної до міфічної й сетами, бонуси яких змінюють стиль бою.",
+  f4_t:"Кузня Торина", f4_d:"Заточка до +10, злиття трьох речей у рідкіснішу й ремонт зносу перед новим боєм.",
+  f5_t:"Данжі й артефакти", f5_d:"Щоденні данжі за золото й досвід і данж артефактів у тумані, де кожен крок — вибір.",
+  f6_t:"Живе місто", f6_d:"Сюжетні завдання, замовлення гільдії, таємні квести й персонажі зі своїм минулим. Не всі ті, ким здаються.",
+  h_screens:"Скріншоти", h_classes:"Обери свій шлях",
+  c1_t:"Воїн", c1_d:"Сталь, щит і бойовий клич. Тримає удар і б'є важко.",
+  c2_t:"Маг", c2_d:"Вогонь, лід і блискавка. Крихкий, але смертоносний на відстані.",
+  c3_t:"Здобувач", c3_d:"Спритність, слабкі місця й здобич. Знаходить золото там, де інші не знаходять нічого.",
+  p_berserk:"Берсерк", p_guard:"Вартовий", p_fire:"Вогонь", p_ice:"Лід", p_hunter:"Мисливець", p_trader:"Торговець",
+  h_world:"Світ Ерасхала",
+  w1:"Тисячу років тому п'ятеро героїв запечатали Малгарота, Короля Демонів. Додому не повернувся ніхто. Тепер печатка тріщить, ліси повні тіней, а своїх героїв цей світ більше не народжує.",
+  w2:"Тож бог шукав за його межами — і знайшов тебе. Асхал, останнє вільне місто, чекає.",
+  w3:"«Тисячі душ. Майже всі згасали, щойно я показував їм, що чекає попереду. Твоя — горить.»",
+  h_tester:"Стань тестером",
+  t_d:"Гра в закритому тесті Google Play. Залиш пошту Google Play — ми додамо тебе до тестерів, і ти зіграєш до релізу та допоможеш зробити гру кращою.",
+  h_community:"Спільнота", h_faq:"Питання",
+  q1:"Гра безкоштовна?", a1:"Так. Dark Throne можна завантажити й грати безкоштовно.",
+  q2:"На яких платформах?", a2:"Зараз Android (закритий тест у Google Play). Далі — iOS.",
+  q3:"Чи потрібен інтернет?", a3:"Грати можна офлайн. Увійди через Google Play Ігри — прогрес збережеться в хмарі й повернеться на новому телефоні.",
+  q4:"Які мови?", a4:"Українська, англійська та російська. Мову можна змінити в налаштуваннях.",
+  q5:"Хто робить гру?", a5:"Downpour Studio — соло-розробник із Києва. Девлоги — на YouTube і в TikTok.",
+  q6:"Знайшов баг або зник прогрес", a6:"Напиши на darkthronerpg@gmail.com і вкажи свій ID гравця (Профіль героя → Копіювати).",
+  ft_privacy:"Політика конфіденційності", ft_delete:"Видалити акаунт", ft_support:"Підтримка"
+}};
+
+var EN = {};
+document.querySelectorAll("[data-i]").forEach(function (el) { EN[el.getAttribute("data-i")] = el.textContent; });
+T.en = EN;
+
+function setLang(l) {
+  if (!T[l]) l = "en";
+  document.documentElement.lang = l;
+  var d = T[l];
+  document.querySelectorAll("[data-i]").forEach(function (el) {
+    var k = el.getAttribute("data-i");
+    if (d[k] != null) el.textContent = d[k];
+  });
+  document.querySelectorAll(".lang button").forEach(function (b) { b.classList.toggle("on", b.getAttribute("data-lang") === l); });
+  var g = document.getElementById("gallery");
+  g.innerHTML = "";
+  SHOTS.forEach(function (s) {
+    var img = new Image();
+    img.src = "assets/store/" + l + "/" + s + ".jpg";
+    img.alt = "Dark Throne: Isekai RPG — " + s.slice(3);
+    img.loading = "lazy"; img.width = 540; img.height = 960;
+    g.appendChild(img);
+  });
+  try { localStorage.setItem("dt_lang", l); } catch (e) {}
+}
+
+document.querySelectorAll(".lang button").forEach(function (b) {
+  b.addEventListener("click", function () { setLang(b.getAttribute("data-lang")); });
+});
+document.getElementById("testerForm").href = TESTER_URL;
+
+var saved = null;
+try { saved = localStorage.getItem("dt_lang"); } catch (e) {}
+var nav = (navigator.language || "en").toLowerCase();
+setLang(saved || (nav.indexOf("uk") === 0 ? "uk" : (nav.indexOf("ru") === 0 || nav.indexOf("be") === 0 || nav.indexOf("kk") === 0) ? "ru" : "en"));
+
+// увеличение скриншотов
+var lb = document.getElementById("lightbox");
+document.getElementById("gallery").addEventListener("click", function (e) {
+  if (e.target.tagName === "IMG") { lb.querySelector("img").src = e.target.src; lb.classList.add("on"); }
+});
+lb.addEventListener("click", function () { lb.classList.remove("on"); });
+</script>
 </body>
 </html>
