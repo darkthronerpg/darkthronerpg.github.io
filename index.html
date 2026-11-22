@@ -127,7 +127,8 @@ h2{font-family:var(--display);color:var(--gold);text-align:center;font-size:clam
 
 .classes{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
 .classes .card h3{font-size:24px}
-.paths{margin-top:14px;display:flex;gap:8px;flex-wrap:wrap}
+.classes .card{display:flex;flex-direction:column}
+.paths{margin-top:auto;padding-top:16px;display:flex;gap:8px;flex-wrap:wrap}
 .paths b{font-weight:700;font-size:14px;letter-spacing:.06em;padding:4px 10px;border:1px solid var(--frame-dim);color:var(--gold)}
 @media(max-width:760px){.classes{grid-template-columns:1fr}}
 
@@ -210,7 +211,7 @@ h1.shine{background:linear-gradient(100deg,#c98f2a 0%,#ffd24d 30%,#fff3c4 45%,#f
 
 .gallery img{transition:transform .35s,border-color .3s,box-shadow .35s}
 .gallery img:hover{transform:translateY(-6px) scale(1.02);border-color:var(--gold);box-shadow:0 18px 40px rgba(0,0,0,.5)}
-.gnav{display:flex;justify-content:center;gap:14px;margin-top:6px}
+.gnav{display:flex;justify-content:center;gap:40px;margin-top:18px}
 .gnav button{width:46px;height:46px;border:1.5px solid var(--frame);background:var(--card);color:var(--gold);font:700 20px Philosopher,serif;cursor:pointer;transform:rotate(45deg)}
 .gnav button span{display:block;transform:rotate(-45deg)}
 .gnav button:hover{background:var(--bronze)}
