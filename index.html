@@ -98,7 +98,8 @@ h1{font-family:var(--display);font-weight:700;color:var(--gold);font-size:clamp(
 .note{margin-top:14px;font-size:15px;color:var(--dim)}
 .phone{justify-self:center;width:min(320px,80vw);padding:10px;border:2px solid var(--frame);background:#05070b;border-radius:34px;box-shadow:0 30px 80px rgba(0,0,0,.7),0 0 60px rgba(204,158,66,.18)}
 .phone img{border-radius:26px}
-@media(max-width:860px){.hero .wrap{grid-template-columns:1fr}.phone{order:-1;width:min(260px,70vw)}}
+.hero .wrap>div:last-child{justify-self:center}
+@media(max-width:860px){.hero .wrap{grid-template-columns:1fr}.hero .wrap>div:last-child{order:-1}.phone{width:min(250px,68vw)}.hero{min-height:auto}.scroll-hint{display:none}}
 
 /* ─ секции ─ */
 section{padding:80px 0;border-top:1px solid rgba(204,158,66,.18)}
@@ -162,6 +163,70 @@ footer a{color:var(--dim)}
 .lightbox{position:fixed;inset:0;background:rgba(0,0,0,.9);display:none;align-items:center;justify-content:center;z-index:50;cursor:zoom-out}
 .lightbox.on{display:flex}
 .lightbox img{max-height:92vh;max-width:92vw;border:1px solid var(--frame)}
+
+/* ═══ v2: атмосфера ═══ */
+.top{transition:background .3s,height .3s}
+.top.small .wrap{height:52px}
+.hero{min-height:min(92vh,920px);display:flex;align-items:center;isolation:isolate}
+.hero::before{content:"";position:absolute;inset:-40px;z-index:-3;background:url(assets/hero_bg.jpg) center/cover;opacity:.55;transform:scale(1.08) translateY(var(--py,0px));transition:transform .1s linear}
+.hero::after{content:"";position:absolute;inset:0;z-index:-2;background:
+  radial-gradient(ellipse at 72% 40%,rgba(255,190,60,.18),transparent 50%),
+  radial-gradient(ellipse at 15% 85%,rgba(140,20,20,.35),transparent 55%),
+  linear-gradient(180deg,rgba(11,14,21,.55) 0%,rgba(11,14,21,.35) 40%,var(--night) 100%)}
+#embers{position:absolute;inset:0;z-index:-1;pointer-events:none}
+h1.shine{background:linear-gradient(100deg,#c98f2a 0%,#ffd24d 30%,#fff3c4 45%,#ffd24d 60%,#c98f2a 100%);background-size:250% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 7s ease-in-out infinite;filter:drop-shadow(0 0 28px rgba(255,180,50,.28))}
+@keyframes shine{0%,100%{background-position:100% 0}50%{background-position:0 0}}
+.phone{position:relative;animation:float 6s ease-in-out infinite}
+.phone::after{content:"";position:absolute;inset:-30px;z-index:-1;background:radial-gradient(circle,rgba(255,190,60,.25),transparent 65%);filter:blur(10px)}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+.screen{position:relative;aspect-ratio:576/1280;border-radius:26px;overflow:hidden}
+.screen img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1s ease;border-radius:0}
+.screen img.on{opacity:1}
+.dots{display:flex;gap:8px;justify-content:center;margin-top:12px}
+.dots i{width:8px;height:8px;transform:rotate(45deg);background:rgba(204,158,66,.35);cursor:pointer;transition:background .3s}
+.dots i.on{background:var(--gold)}
+.scroll-hint{position:absolute;left:50%;bottom:22px;transform:translateX(-50%);width:22px;height:36px;border:1.5px solid var(--frame-dim);border-radius:12px}
+.scroll-hint::after{content:"";position:absolute;left:50%;top:7px;width:4px;height:8px;margin-left:-2px;border-radius:2px;background:var(--gold);animation:wheel 1.8s infinite}
+@keyframes wheel{0%{opacity:0;transform:translateY(0)}30%{opacity:1}100%{opacity:0;transform:translateY(12px)}}
+
+.stats{border-top:1px solid var(--frame-dim);border-bottom:1px solid var(--frame-dim);background:linear-gradient(90deg,transparent,rgba(204,158,66,.07),transparent);padding:26px 0}
+.stats .wrap{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;text-align:center}
+.stats b{display:block;font-family:Cinzel,Philosopher,serif;color:var(--gold);font-size:clamp(26px,3.4vw,40px);line-height:1.1}
+.stats span{font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim)}
+@media(max-width:700px){.stats .wrap{grid-template-columns:repeat(3,1fr);row-gap:20px}}
+
+.card{transition:transform .35s cubic-bezier(.2,.8,.2,1),border-color .3s,box-shadow .35s;overflow:hidden}
+.card::after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(380px circle at var(--mx,50%) var(--my,0%),rgba(255,200,90,.13),transparent 45%);opacity:0;transition:opacity .3s}
+.card:hover{transform:translateY(-6px);border-color:var(--frame);box-shadow:0 18px 40px rgba(0,0,0,.45),0 0 30px rgba(204,158,66,.12)}
+.card:hover::after{opacity:1}
+.card:hover .ico{box-shadow:0 0 18px rgba(255,200,80,.45)}
+.ico{transition:box-shadow .3s}
+
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.8,.2,1)}
+.reveal.in{opacity:1;transform:none}
+.feat .reveal:nth-child(2),.classes .reveal:nth-child(2){transition-delay:.08s}
+.feat .reveal:nth-child(3),.classes .reveal:nth-child(3){transition-delay:.16s}
+.feat .reveal:nth-child(5){transition-delay:.08s}.feat .reveal:nth-child(6){transition-delay:.16s}
+
+.gallery img{transition:transform .35s,border-color .3s,box-shadow .35s}
+.gallery img:hover{transform:translateY(-6px) scale(1.02);border-color:var(--gold);box-shadow:0 18px 40px rgba(0,0,0,.5)}
+.gnav{display:flex;justify-content:center;gap:14px;margin-top:6px}
+.gnav button{width:46px;height:46px;border:1.5px solid var(--frame);background:var(--card);color:var(--gold);font:700 20px Philosopher,serif;cursor:pointer;transform:rotate(45deg)}
+.gnav button span{display:block;transform:rotate(-45deg)}
+.gnav button:hover{background:var(--bronze)}
+
+.world .shot{transition:transform .6s;box-shadow:0 30px 70px rgba(0,0,0,.6)}
+.world .shot:hover{transform:perspective(900px) rotateY(-6deg) scale(1.02)}
+
+.tester{position:relative;overflow:hidden}
+.tester::before{content:"";position:absolute;width:900px;height:520px;left:50%;top:-260px;margin-left:-450px;background:radial-gradient(ellipse,rgba(255,200,80,.16),transparent 65%);animation:pulse 5s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:.6;transform:scale(.95)}50%{opacity:1;transform:scale(1.05)}}
+.tester .wrap{position:relative}
+.btn.main{overflow:hidden}
+.btn.main span.glint{position:absolute;inset:0;background:linear-gradient(100deg,transparent 30%,rgba(255,255,255,.35) 50%,transparent 70%);transform:translateX(-120%);animation:glint 4.5s ease-in-out infinite}
+@keyframes glint{0%,60%{transform:translateX(-120%)}80%,100%{transform:translateX(120%)}}
+
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
 </style>
 </head>
 <body>
@@ -183,11 +248,11 @@ footer a{color:var(--dim)}
 </header>
 
 <main>
-<section class="hero" style="border-top:0">
+<section class="hero" style="border-top:0"><canvas id="embers"></canvas>
   <div class="wrap">
     <div>
       <div class="kicker" data-i="kicker">Dark fantasy mobile RPG</div>
-      <h1>DARK THRONE</h1>
+      <h1 class="shine">DARK THRONE</h1>
       <p class="sub">ISEKAI RPG</p>
       <p class="lead" data-i="lead">You were summoned to Erashal, a world where the seal on the Demon King Malgarot is cracking. Fight with swipes, read every attack, forge your gear and uncover what the people of Ashal are hiding.</p>
       <div class="cta">
@@ -196,41 +261,60 @@ footer a{color:var(--dim)}
       </div>
       <p class="note" data-i="note">Free · Android · iOS coming soon · English, Русский, Українська</p>
     </div>
-    <div class="phone"><img src="assets/shots/battle.jpg" alt="Dark Throne combat: a black wolf attacks, dodge and block buttons" width="576" height="1280"></div>
+    <div><div class="phone"><div class="screen" id="screen">
+        <img class="on" src="assets/shots/battle.jpg" alt="Combat: a black wolf attacks, dodge and block buttons">
+        <img src="assets/shots/hero.jpg" alt="Choose your hero: Warrior, Mage, Gatherer" loading="lazy">
+        <img src="assets/shots/city.jpg" alt="The city of Ashal" loading="lazy">
+        <img src="assets/shots/bag.jpg" alt="Bag and gear" loading="lazy">
+        <img src="assets/shots/forge.jpg" alt="Torin's forge" loading="lazy">
+        <img src="assets/shots/dungeons.jpg" alt="Dungeons" loading="lazy">
+      </div></div><div class="dots" id="dots"></div></div>
   </div>
+  <div class="scroll-hint" aria-hidden="true"></div>
 </section>
+
+<div class="stats">
+  <div class="wrap">
+    <div><b>400+</b><span data-i="s_items">items</span></div>
+    <div><b>3</b><span data-i="s_classes">classes</span></div>
+    <div><b>6</b><span data-i="s_paths">paths</span></div>
+    <div><b>3</b><span data-i="s_dungeons">dungeons</span></div>
+    <div><b>0 $</b><span data-i="s_free">to play</span></div>
+  </div>
+</div>
 
 <section id="features">
   <div class="wrap">
-    <h2 data-i="h_features">What awaits you</h2>
+    <h2 class="reveal" data-i="h_features">What awaits you</h2>
     <div class="rule"><i></i></div>
     <div class="feat">
-      <div class="card"><div class="ico"><span>I</span></div><h3 data-i="f1_t">Swipe combat</h3><p data-i="f1_d">Strike with a swipe. An orange bar means block, a red one means dodge. Perfect timing slows time and doubles your next hit.</p></div>
-      <div class="card"><div class="ico"><span>II</span></div><h3 data-i="f2_t">Classes and paths</h3><p data-i="f2_d">Warrior, Mage or Gatherer. At class level 15 choose one of two paths, and your hero's look changes with every step.</p></div>
-      <div class="card"><div class="ico"><span>III</span></div><h3 data-i="f3_t">400+ items</h3><p data-i="f3_d">Weapons and armor with levels, rarities from common to mythic, and sets whose bonuses change how you fight.</p></div>
-      <div class="card"><div class="ico"><span>IV</span></div><h3 data-i="f4_t">Torin's forge</h3><p data-i="f4_d">Upgrade gear up to +10, fuse three items into a rarer one and repair worn armor before the next fight.</p></div>
-      <div class="card"><div class="ico"><span>V</span></div><h3 data-i="f5_t">Dungeons and artifacts</h3><p data-i="f5_d">Daily dungeons for gold and XP, and a fog-covered artifact dungeon where every step is a choice.</p></div>
-      <div class="card"><div class="ico"><span>VI</span></div><h3 data-i="f6_t">A living city</h3><p data-i="f6_d">Story quests, guild contracts, secret quests and characters with their own pasts. Not everyone is who they seem.</p></div>
+      <div class="card reveal"><div class="ico"><span>I</span></div><h3 data-i="f1_t">Swipe combat</h3><p data-i="f1_d">Strike with a swipe. An orange bar means block, a red one means dodge. Perfect timing slows time and doubles your next hit.</p></div>
+      <div class="card reveal"><div class="ico"><span>II</span></div><h3 data-i="f2_t">Classes and paths</h3><p data-i="f2_d">Warrior, Mage or Gatherer. At class level 15 choose one of two paths, and your hero's look changes with every step.</p></div>
+      <div class="card reveal"><div class="ico"><span>III</span></div><h3 data-i="f3_t">400+ items</h3><p data-i="f3_d">Weapons and armor with levels, rarities from common to mythic, and sets whose bonuses change how you fight.</p></div>
+      <div class="card reveal"><div class="ico"><span>IV</span></div><h3 data-i="f4_t">Torin's forge</h3><p data-i="f4_d">Upgrade gear up to +10, fuse three items into a rarer one and repair worn armor before the next fight.</p></div>
+      <div class="card reveal"><div class="ico"><span>V</span></div><h3 data-i="f5_t">Dungeons and artifacts</h3><p data-i="f5_d">Daily dungeons for gold and XP, and a fog-covered artifact dungeon where every step is a choice.</p></div>
+      <div class="card reveal"><div class="ico"><span>VI</span></div><h3 data-i="f6_t">A living city</h3><p data-i="f6_d">Story quests, guild contracts, secret quests and characters with their own pasts. Not everyone is who they seem.</p></div>
     </div>
   </div>
 </section>
 
 <section id="screens" class="alt">
   <div class="wrap">
-    <h2 data-i="h_screens">Screenshots</h2>
+    <h2 class="reveal" data-i="h_screens">Screenshots</h2>
     <div class="rule"><i></i></div>
     <div class="gallery" id="gallery"></div>
+    <div class="gnav"><button id="gPrev" aria-label="Back"><span>‹</span></button><button id="gNext" aria-label="Next"><span>›</span></button></div>
   </div>
 </section>
 
 <section id="classes">
   <div class="wrap">
-    <h2 data-i="h_classes">Choose your path</h2>
+    <h2 class="reveal" data-i="h_classes">Choose your path</h2>
     <div class="rule"><i></i></div>
     <div class="classes">
-      <div class="card"><h3 data-i="c1_t">Warrior</h3><p data-i="c1_d">Steel, shield and battle cry. Holds the line and hits hard.</p><div class="paths"><b data-i="p_berserk">Berserker</b><b data-i="p_guard">Guardian</b></div></div>
-      <div class="card"><h3 data-i="c2_t">Mage</h3><p data-i="c2_d">Fire, ice and lightning. Fragile, but deadly from afar.</p><div class="paths"><b data-i="p_fire">Fire</b><b data-i="p_ice">Ice</b></div></div>
-      <div class="card"><h3 data-i="c3_t">Gatherer</h3><p data-i="c3_d">Agility, weak spots and loot. Finds gold where others find nothing.</p><div class="paths"><b data-i="p_hunter">Hunter</b><b data-i="p_trader">Trader</b></div></div>
+      <div class="card reveal"><h3 data-i="c1_t">Warrior</h3><p data-i="c1_d">Steel, shield and battle cry. Holds the line and hits hard.</p><div class="paths"><b data-i="p_berserk">Berserker</b><b data-i="p_guard">Guardian</b></div></div>
+      <div class="card reveal"><h3 data-i="c2_t">Mage</h3><p data-i="c2_d">Fire, ice and lightning. Fragile, but deadly from afar.</p><div class="paths"><b data-i="p_fire">Fire</b><b data-i="p_ice">Ice</b></div></div>
+      <div class="card reveal"><h3 data-i="c3_t">Gatherer</h3><p data-i="c3_d">Agility, weak spots and loot. Finds gold where others find nothing.</p><div class="paths"><b data-i="p_hunter">Hunter</b><b data-i="p_trader">Trader</b></div></div>
     </div>
   </div>
 </section>
@@ -238,7 +322,7 @@ footer a{color:var(--dim)}
 <section id="world" class="alt">
   <div class="wrap world">
     <div>
-      <h2 style="text-align:left" data-i="h_world">The world of Erashal</h2>
+      <h2 class="reveal" style="text-align:left" data-i="h_world">The world of Erashal</h2>
       <p data-i="w1">A thousand years ago five heroes sealed Malgarot, the Demon King. None of them came home. Now the seal is cracking, the forests are full of shadows, and this world no longer gives birth to heroes of its own.</p>
       <p data-i="w2">So a god searched beyond it, and found you. Ashal, the last free city, is waiting.</p>
       <blockquote data-i="w3">"Thousands of souls. Almost all of them went out the moment I showed them what lay ahead. Yours is still burning."</blockquote>
@@ -249,7 +333,7 @@ footer a{color:var(--dim)}
 
 <section id="tester" class="tester">
   <div class="wrap">
-    <h2 data-i="h_tester">Join the closed test</h2>
+    <h2 class="reveal" data-i="h_tester">Join the closed test</h2>
     <div class="rule"><i></i></div>
     <p data-i="t_d">The game is in closed testing on Google Play. Leave your Google Play email, we add you to the testers, and you play before release and help shape the game.</p>
     <div class="cta">
@@ -261,7 +345,7 @@ footer a{color:var(--dim)}
 
 <section id="community">
   <div class="wrap">
-    <h2 data-i="h_community">Community</h2>
+    <h2 class="reveal" data-i="h_community">Community</h2>
     <div class="rule"><i></i></div>
     <div class="social">
       <a href="https://discord.gg/MQnkBZV8D4" target="_blank" rel="noopener">Discord <small>EN · RU</small></a>
@@ -276,13 +360,13 @@ footer a{color:var(--dim)}
 
 <section id="faq" class="alt">
   <div class="wrap faq">
-    <h2 data-i="h_faq">FAQ</h2>
+    <h2 class="reveal" data-i="h_faq">FAQ</h2>
     <div class="rule"><i></i></div>
     <details><summary data-i="q1">Is the game free?</summary><p data-i="a1">Yes. Dark Throne is free to download and play.</p></details>
     <details><summary data-i="q2">Which platforms?</summary><p data-i="a2">Android now (closed test on Google Play). iOS is planned next.</p></details>
     <details><summary data-i="q3">Do I need internet?</summary><p data-i="a3">You can play offline. Sign in with Google Play Games to keep your progress in the cloud and restore it on a new phone.</p></details>
     <details><summary data-i="q4">Which languages?</summary><p data-i="a4">English, Russian and Ukrainian. You can switch the language in the settings.</p></details>
-    <details><summary data-i="q5">Who makes it?</summary><p data-i="a5">Downpour Studio, a solo indie developer from Kyiv. Follow the devlogs on YouTube and TikTok.</p></details>
+    <details><summary data-i="q5">Who makes it?</summary><p data-i="a5">Downpour Studio, a solo indie developer. Follow the devlogs on YouTube and TikTok.</p></details>
     <details><summary data-i="q6">I found a bug or lost progress</summary><p data-i="a6">Write to darkthronerpg@gmail.com and include your Player ID (Hero profile → Copy).</p></details>
   </div>
 </section>
@@ -337,9 +421,10 @@ ru: {
   q2:"На каких платформах?", a2:"Сейчас Android (закрытый тест в Google Play). Следом — iOS.",
   q3:"Нужен ли интернет?", a3:"Играть можно офлайн. Войди через Google Play Игры — прогресс сохранится в облаке и вернётся на новом телефоне.",
   q4:"Какие языки?", a4:"Русский, английский и украинский. Язык меняется в настройках.",
-  q5:"Кто делает игру?", a5:"Downpour Studio — соло-разработчик из Киева. Девлоги — на YouTube и в TikTok.",
+  q5:"Кто делает игру?", a5:"Downpour Studio — соло-разработчик. Девлоги — на YouTube и в TikTok.",
   q6:"Нашёл баг или пропал прогресс", a6:"Напиши на darkthronerpg@gmail.com и укажи свой ID игрока (Профиль героя → Копировать).",
-  ft_privacy:"Политика конфиденциальности", ft_delete:"Удалить аккаунт", ft_support:"Поддержка"
+  ft_privacy:"Политика конфиденциальности", ft_delete:"Удалить аккаунт", ft_support:"Поддержка",
+  s_items:"вещей", s_classes:"класса", s_paths:"путей", s_dungeons:"данжа", s_free:"бесплатно"
 },
 uk: {
   nav_features:"Особливості", nav_screens:"Скріншоти", nav_world:"Світ", nav_community:"Спільнота", nav_faq:"Питання",
@@ -370,9 +455,10 @@ uk: {
   q2:"На яких платформах?", a2:"Зараз Android (закритий тест у Google Play). Далі — iOS.",
   q3:"Чи потрібен інтернет?", a3:"Грати можна офлайн. Увійди через Google Play Ігри — прогрес збережеться в хмарі й повернеться на новому телефоні.",
   q4:"Які мови?", a4:"Українська, англійська та російська. Мову можна змінити в налаштуваннях.",
-  q5:"Хто робить гру?", a5:"Downpour Studio — соло-розробник із Києва. Девлоги — на YouTube і в TikTok.",
+  q5:"Хто робить гру?", a5:"Downpour Studio — соло-розробник. Девлоги — на YouTube і в TikTok.",
   q6:"Знайшов баг або зник прогрес", a6:"Напиши на darkthronerpg@gmail.com і вкажи свій ID гравця (Профіль героя → Копіювати).",
-  ft_privacy:"Політика конфіденційності", ft_delete:"Видалити акаунт", ft_support:"Підтримка"
+  ft_privacy:"Політика конфіденційності", ft_delete:"Видалити акаунт", ft_support:"Підтримка",
+  s_items:"речей", s_classes:"класи", s_paths:"шляхів", s_dungeons:"данжі", s_free:"безкоштовно"
 }};
 
 var EN = {};
@@ -416,6 +502,69 @@ document.getElementById("gallery").addEventListener("click", function (e) {
   if (e.target.tagName === "IMG") { lb.querySelector("img").src = e.target.src; lb.classList.add("on"); }
 });
 lb.addEventListener("click", function () { lb.classList.remove("on"); });
+
+// ═══ v2: живость ═══
+var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+// блик на главных кнопках
+document.querySelectorAll(".btn.main").forEach(function (b) { var g = document.createElement("span"); g.className = "glint"; b.appendChild(g); });
+
+// шапка уменьшается при прокрутке + параллакс фона героя
+var top_ = document.querySelector(".top"), heroEl = document.querySelector(".hero");
+window.addEventListener("scroll", function () {
+  top_.classList.toggle("small", window.scrollY > 40);
+  if (!reduce) heroEl.style.setProperty("--py", (window.scrollY * 0.25) + "px");
+}, { passive: true });
+
+// экран телефона — смена скриншотов
+(function () {
+  var imgs = document.querySelectorAll("#screen img"), dots = document.getElementById("dots"), i = 0, timer;
+  imgs.forEach(function (_, k) { var d = document.createElement("i"); if (!k) d.className = "on"; d.onclick = function () { show(k); restart(); }; dots.appendChild(d); });
+  function show(k) { imgs[i].classList.remove("on"); dots.children[i].classList.remove("on"); i = k; imgs[i].classList.add("on"); dots.children[i].classList.add("on"); }
+  function restart() { clearInterval(timer); if (!reduce) timer = setInterval(function () { show((i + 1) % imgs.length); }, 3200); }
+  restart();
+})();
+
+// появление при прокрутке
+if ("IntersectionObserver" in window && !reduce) {
+  var io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } }); }, { threshold: 0.15 });
+  document.querySelectorAll(".reveal").forEach(function (el) { io.observe(el); });
+} else document.querySelectorAll(".reveal").forEach(function (el) { el.classList.add("in"); });
+
+// подсветка карточки за курсором
+document.querySelectorAll(".card").forEach(function (c) {
+  c.addEventListener("pointermove", function (e) { var r = c.getBoundingClientRect(); c.style.setProperty("--mx", (e.clientX - r.left) + "px"); c.style.setProperty("--my", (e.clientY - r.top) + "px"); });
+});
+
+// стрелки галереи
+function gScroll(dir) { var g = document.getElementById("gallery"); g.scrollBy({ left: dir * 268, behavior: "smooth" }); }
+document.getElementById("gPrev").onclick = function () { gScroll(-1); };
+document.getElementById("gNext").onclick = function () { gScroll(1); };
+
+// угольки над героем
+(function () {
+  var cv = document.getElementById("embers"); if (!cv || reduce) return;
+  var ctx = cv.getContext("2d"), W, H, dpr = Math.min(window.devicePixelRatio || 1, 2), parts = [], run = true;
+  function size() { W = cv.clientWidth; H = cv.clientHeight; cv.width = W * dpr; cv.height = H * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0); }
+  function spawn(init) { return { x: Math.random() * W, y: init ? Math.random() * H : H + 10, r: 0.6 + Math.random() * 2.2, vy: 0.25 + Math.random() * 0.9, vx: (Math.random() - 0.5) * 0.3, ph: Math.random() * 6.28, life: 0 }; }
+  size(); var n = W < 700 ? 40 : 80; for (var k = 0; k < n; k++) parts.push(spawn(true));
+  window.addEventListener("resize", size);
+  new IntersectionObserver(function (e) { run = e[0].isIntersecting; if (run) loop(); }).observe(cv);
+  function loop() {
+    if (!run) return;
+    ctx.clearRect(0, 0, W, H);
+    for (var k = 0; k < parts.length; k++) {
+      var p = parts[k]; p.life += 0.016; p.y -= p.vy; p.x += p.vx + Math.sin(p.life * 1.5 + p.ph) * 0.35;
+      if (p.y < -10) parts[k] = p = spawn(false);
+      var a = Math.min(1, (H - p.y) / 200) * (0.45 + 0.35 * Math.sin(p.life * 3 + p.ph));
+      var g = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.r * 4);
+      g.addColorStop(0, "rgba(255,214,120," + a + ")"); g.addColorStop(0.4, "rgba(255,140,40," + a * 0.5 + ")"); g.addColorStop(1, "rgba(255,90,20,0)");
+      ctx.fillStyle = g; ctx.beginPath(); ctx.arc(p.x, p.y, p.r * 4, 0, 6.283); ctx.fill();
+    }
+    requestAnimationFrame(loop);
+  }
+  loop();
+})();
 </script>
 </body>
 </html>
